@@ -1,0 +1,72 @@
+#navli , .butn{
+    margin: 0rem 1rem;
+    list-style: none;
+}
+#navli .a{
+    text-decoration: none;
+    color: inherit;
+}
+#navli:hover{
+    cursor: pointer;
+}
+.butn:hover{
+    cursor: pointer;
+}
+.navul , .buttons{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navul .active{
+    padding-bottom: 0.18rem;
+    border-bottom: 0.1rem solid red;
+}
+.cart{
+    position: relative;
+}
+.cart .alertcart{
+position: absolute;
+min-width: 0.6rem;
+min-height: 0.6rem;
+background-color: blue;
+border-radius: 50%;
+top: -7px;
+right: 5px;
+}
+.Link{
+    text-decoration-line: none;
+    color: inherit;
+}
+.prof{
+    position: relative;
+}
+.navprof{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+.prof:hover .navprof{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 248, 245);
+    cursor: pointer;
+    padding: 1rem;
+    list-style: none;
+    align-items: flex-start;
+}
+.navprof li{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    cursor: pointer;
+    padding: 0.1rem;
+}
+.navprof img{
+    width: 1.5rem;
+}
+.navprof li:hover{
+    color: darkred;
+}

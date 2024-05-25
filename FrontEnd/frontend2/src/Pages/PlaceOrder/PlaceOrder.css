@@ -1,0 +1,38 @@
+.Placeorder{
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-top: 0.8rem;
+    width: auto;
+}
+.rightplace{
+    width: 58%;
+    padding: 0 0 0 5rem;
+}
+.leftplace{
+    width: 40%;
+    padding: 0 0 0 1rem;
+}
+.leftplace input{
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.2rem;
+    border: 1px solid rgb(47, 48, 45);
+}
+.leftplace .fields{
+    display: flex;
+    gap: 0.5rem;
+}
+.grand-total{
+    width: 90%;
+}
+.det:first-of-type{
+    background-color: rgb(210, 210, 215);
+    padding: 2rem;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

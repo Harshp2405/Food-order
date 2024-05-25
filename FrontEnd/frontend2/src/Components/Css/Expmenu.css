@@ -1,0 +1,27 @@
+.list{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 127, 80, 0.363);
+    overflow-x: scroll;
+    justify-content: space-evenly;
+}
+.list::-webkit-scrollbar{
+    display: none;
+}
+.listItem{
+    font-variant-caps: all-petite-caps;
+    text-align: center;
+    padding: 0.8rem 0rem 0 0;
+}
+
+.listItem Img{
+    height: 7rem;
+    cursor: pointer;
+}
+
+.active{
+    scale: 1.2;
+    padding: 3px 3px;
+}

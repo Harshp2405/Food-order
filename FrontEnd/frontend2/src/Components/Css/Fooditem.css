@@ -1,0 +1,45 @@
+.fooditem {
+    width: 16.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 2px #f9cb80;
+}
+
+.fooditem img{
+    width: inherit;
+}
+
+.info{
+    padding: 0.5rem;
+}
+.info .price{
+    color: coral;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.price-count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.price-count .add{
+    width: 3rem;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 15%;
+    right: 3%;
+    bottom: 15%;
+}
+.counter{
+    position: absolute;
+    bottom: 10%;
+    right: 1%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.1rem;
+    border-radius: 20%;
+}
+.counter img{
+    width: 1.7rem;
+}

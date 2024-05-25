@@ -1,0 +1,30 @@
+.Listc{
+width: 100%;
+height: 100%;
+}
+.itmtabfmt{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    padding: 0.5rem 0.7rem;
+    gap: 0.8rem;
+    align-items: center;
+    border-bottom: 1px black solid;
+    margin: 0.4rem 0.3rem;
+}
+.titlefmt{
+    color: black;
+    background-color: ghostwhite;
+}
+.itmtabfmt .imgfood{
+    width: 8rem;
+    height: 5rem;
+}
+.imgfood img{
+    height: inherit;
+    width: inherit;
+}
+.del:hover{
+    cursor: pointer;
+    color: red;
+}
+

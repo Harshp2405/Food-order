@@ -1,0 +1,9 @@
+.fooddisplay{}
+.dishlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(20rem , 1fr));
+    margin: 1.5rem;
+    gap: 0.5rem;
+    row-gap: 2.5rem;
+    justify-items: center;
+}

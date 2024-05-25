@@ -1,0 +1,1 @@
+npm i nodemon express mongoose cors jsonwebtoken bcrypt dotenv body-parser multer stripe validator

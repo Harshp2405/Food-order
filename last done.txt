@@ -1,0 +1,42 @@
+
+Frontend almost done
+Backend foldeStructure done
+Admin panel start 
+
+start at 7:39:10
+add to cart and remove done
+
+
+at admin delete didntwork
+
+
+Backend urls:-
+
+images (get): http://localhost:2024/images/{imagename}
+add food (post) : http://localhost:2024/api/food/add
+list food (get):http://localhost:2024/api/food/list
+delete food (delete):http://localhost:2024/api/food/remove
+
+
+
+Signup user (post):http://localhost:2024/api/user/signup
+Login user(post):http://localhost:2024/api/user/login
+
+
+
+add cart(post):http://localhost:2024/api/cart/add
+remove cart(del):http://localhost:2024/api/cart/remove
+all cart(post):http://localhost:2024/api/cart/remove
+user name(post):http://localhost:2024/api/cart/username
+
+possible to write : welcome {username} on main page
+
+
+
+
+
+
+
+"userName":"Harsh",
+"userMail":"h@gmail.com",
+"userPassword":"12345678"
