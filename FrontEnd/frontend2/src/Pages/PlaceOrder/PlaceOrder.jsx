@@ -2,36 +2,110 @@ import React, { useContext } from 'react'
 import './PlaceOrder.css'
 import { Storecontext } from '../../Context/Storecontext'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import axios from 'axios'
 export const PlaceOrder = () => {
 
-  const { carttotal}= useContext(Storecontext)
+  const { carttotal , token,food_list,cartitem}= useContext(Storecontext)
+
+  const[data , setdata]=useState({
+    Firstname:"",
+    Lastname:"",
+    Emailid:"",
+    Phonenumber:"",
+    Houseno:"",
+    Streetname:"",
+    Area:"",
+    LandMark:"",
+    Cityname:"",
+    Pincode:"",
+    State:"",
+  })
+
+// const [paym, setpaym] = useState({paym:"online"})
+// const onpay =(e)=>{
+//   const name = e.target.name
+//   const value = e.target.value
+//   setpaym(paym=>({...paym,[name]:value}))
+// }
+
+  const onchange =(e)=>{
+    const name = e.target.name
+    const value = e.target.value
+    setdata(data=>({...data,[name]:value}))
+  }
+
+  const placeorder = async (e)=>{
+    e.preventDefault()
+    let orderdata = []
+    food_list.map((item)=>{
+      if(cartitem[item._id]>0){
+        let iteminfo = item
+        iteminfo["quantity"] = cartitem[item._id]
+        orderdata.push(iteminfo)
+      }
+      return orderdata
+    })
+    console.log(orderdata)
+    let od = {
+      address:data,
+      items:orderdata,
+      amount:carttotal()+100,
+    }
+    let res = await axios.post("http://localhost:2024/api/order/place",od,{headers:{token}})
+    console.log(res.data) 
+
+    if(res.data.sucess){
+      const {session} = res.data;
+      window.location.replace(session)
+    }else{
+      alert("Something went wrong")
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    console.log(data)
+    // console.log(paym)
+  }, [data])
+
 const navigate = useNavigate()
 
   return (
     <>
-      <form className="Placeorder">
+      <form onSubmit={placeorder} className="Placeorder">
         <div className="leftplace">
           <h3 className="title">Dilivery info</h3>
           <div className="fields">
-            <input required type="text" placeholder='First name'/>
-            <input required type="text" placeholder='Last name'/>
+            <input name='Firstname' onChange={onchange} value={data.Firstname} required type="text" placeholder='First name'/>
+            <input name='Lastname' onChange={onchange} value={data.Lastname} required type="text" placeholder='Last name'/>
           </div>
-          <input required type="email" placeholder='Email id'/>
-          <input required type="number" placeholder='Phone  number'/>
+          <input name='Emailid' onChange={onchange} value={data.Emailid} required type="email" placeholder='Email id'/>
+          <input name='Phonenumber' onChange={onchange} value={data.Phonenumber} required type="number" placeholder='Phone  number'/>
           <div className="fields">
-            <input required type="text" placeholder='House no.'/>
-            <input required type="text" placeholder='Street Name'/>
+            <input name='Houseno' onChange={onchange} value={data.Houseno} required type="text" placeholder='House no.'/>
+            <input name='Streetname' onChange={onchange} value={data.Streetname} required type="text" placeholder='Street Name'/>
           </div>
-            <input required type="text" placeholder='Area'/>
-            <input required type="text" placeholder='LandMark'/>
-            <input required type="text" placeholder='City name'/>
+            <input name='Area' onChange={onchange} value={data.Area} required type="text" placeholder='Area'/>
+            <input name='LandMark' onChange={onchange} value={data.LandMark} required type="text" placeholder='LandMark'/>
+            <input name='Cityname' onChange={onchange} value={data.Cityname} required type="text" placeholder='City name'/>
           <div className="fields">
-            <input required type="number" placeholder='Pincode'/>
-            <input required type="text" placeholder='State'/>
+            <input name='Pincode' onChange={onchange} value={data.Pincode} required type="number" placeholder='Pincode'/>
+            <input name='State' onChange={onchange} value={data.State} required type="text" placeholder='State'/>
           </div>
+
+
+          {/* <select onChange={onpay}  name="paym" >
+                <option value="online">Online</option>
+                <option value="COD">Cash on delivery</option>
+              </select> */}
+
+
         </div>
         <div className="rightplace">
         <div className="grand-total ">
+        
           <h3>Total</h3>
           <div className='det'>
             <div className="details">
@@ -40,16 +114,16 @@ const navigate = useNavigate()
             </div>
             <br/>
             <div className="details">
-              <p>Dilivery Charge 12%</p>
-              <p>{carttotal()===0?0:parseInt((carttotal()*12)/100)}/-</p>
+              <p>Dilivery Charge </p>
+              <p>100/-</p>
             </div>
             <br/>
             <div className="details">
               <p>Total</p>
-              <p>{carttotal()===0?0:((carttotal()+parseInt((carttotal()*12)/100)))}/-</p>
+              <p>{carttotal()===0?0:((carttotal()+100))}/-</p>
             </div>
           </div>
-            <button className='btn btn-success w-75 mx-5 mt-2'>Payment</button>
+            <button className='btn btn-success w-75 mx-5 mt-2' type='submit'>Payment</button>
             <button className='btn bg-danger-subtle w-75 mx-5 mt-2' onClick={()=>{navigate("/Cart")}} >Change Item</button>
         </div>
         </div>

@@ -49,13 +49,13 @@ export const Cart = () => {
             </div>
             <hr />
             <div className="carttotaldetail">
-              <p>Dilivery charge 12% </p>
-              <p>{carttotal()=== 0?0:parseInt((carttotal()*12)/100)}</p>
+              <p>Dilivery charge </p>
+              <p>{carttotal()=== 0?0:100}rs</p>
             </div>
             <hr />
             <div className="carttotaldetail">
               <p>total</p>
-              <p>{carttotal()===0?0:carttotal()+parseInt((carttotal()*12)/100)}</p>
+              <p>{carttotal()===0?0:carttotal()+100}</p>
             </div>
           </div>
             <button className='btn bg-primary w-75 mx-5' onClick={()=>{navigate("/PlaceOrder")}} >Checkout</button>

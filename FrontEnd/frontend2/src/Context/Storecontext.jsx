@@ -36,12 +36,12 @@ export const Storecontextprovider =(props)=>{
             let tamount = 0
             for (const item in cartitem) {
                     let iteminfo = food_list.find((product)=>product._id === item)
-                    tamount += iteminfo.price * cartitem[item]
-                    console.log(JSON.stringify(food_list)+"item")
-                    console.log(JSON.stringify(iteminfo) +" iteminfo")
-                    console.log(JSON.stringify(tamount) +" tamouny")
+                    tamount = tamount + (iteminfo.price * cartitem[item])
+                    // console.log(JSON.stringify(food_list)+"item")
+                    // console.log(JSON.stringify(iteminfo) +" iteminfo")
+                    // console.log(JSON.stringify(tamount) +" tamouny")
+                }
                 return tamount;
-            }
         } catch (error) {
             console.log(error)
         }
@@ -75,7 +75,7 @@ export const Storecontextprovider =(props)=>{
         url,token,settoken,
     }
     useEffect(() => {
-        console.log(cartitem)
+        // console.log(cartitem)
     }, [cartitem])
     
     return(

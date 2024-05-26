@@ -8,6 +8,7 @@ import {foodrouter} from "./routes/FoodRoute.js"
 import { userrouter } from './routes/UserRoutes.js';
 import 'dotenv/config.js'
 import { cartrouter } from './routes/CartRoute.js';
+import { Orderrouter } from './routes/OrderRoutes.js';
 
 
 const app= express()
@@ -20,8 +21,6 @@ connectdb();
     // Api
     app.use("/api/food",foodrouter)
     app.use("/images",express.static("uploads"))
-
-    //MiddleWare
     app.use(json())
 
     //methods
@@ -30,19 +29,16 @@ connectdb();
     })
 
 
-
-
-
 //User 
     //Api
     app.use("/api/user",userrouter)
-    //Middleware
-
-    //methods
-
 
 //Cart
     //Api
     app.use("/api/cart",cartrouter)
+
+//Order
+    //Api
+    app.use("/api/order",Orderrouter)
 
 app.listen(2024,()=>{ console.log("running") })

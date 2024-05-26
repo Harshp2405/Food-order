@@ -3,7 +3,7 @@ Frontend almost done
 Backend foldeStructure done
 Admin panel start 
 
-start at 7:39:10
+start at 8:24:10
 add to cart and remove done
 
 
