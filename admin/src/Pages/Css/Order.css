@@ -1,0 +1,20 @@
+.orders{
+    width: 90%;
+    padding: 0.2rem 2rem;
+}
+ .address{
+    width: 100%;
+}
+.fooditem{
+    width: 100%;
+}
+.oitem{
+    border: 1px solid black;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+#sel{
+    margin: 1rem 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 68, 0, 0.386);
+}

@@ -30,8 +30,8 @@ export const Footer = () => {
 
             <div className="box">
               <h3>contact info</h3>
-              <p> <i className="fas fa-phone"></i> +91 97260 90103</p>
-              <p> <i className="fas fa-phone"></i> +91 63540 75834 </p>
+              <p> <i className="fas fa-phone"></i> +91 00260 90103</p>
+              <p> <i className="fas fa-phone"></i> +91 63500 75834 </p>
               <p> <i className="fas fa-envelope" ></i><a href="mailto:everfreshgrocery@gmail.com">everfreshgrocery@gmail.com</a> </p>
               <p> <i className="fas fa-map-marker-alt"></i> Rajkot,Gujarat ,INDIA - 360001 </p>
             </div>

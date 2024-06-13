@@ -36,3 +36,16 @@
     justify-content: space-between;
     align-items: center;
 }
+.paymenttype{
+    background-color: rgb(17, 14, 10);
+    color: whitesmoke;
+    padding: 0.3rem 1rem;
+}
+.paydiv{
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+#sel{
+    background-color: rgba(255, 68, 0, 0.554);
+    padding: 0.3rem 1rem;
+}

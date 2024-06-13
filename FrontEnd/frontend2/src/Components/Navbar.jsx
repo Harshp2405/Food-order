@@ -39,7 +39,7 @@ export const Navbar = ({setshowlogin}) => {
                         {!token?<button className='butn btn btn-dark' onClick={()=>{setshowlogin(true)}} >Sign in</button>:<div className='prof' >
                             <img src={assetsf.profile_icon} alt="" />
                             <ul className="navprof">
-                                <li><img src={assetsf.bag_icon} alt="" /><p>Order</p></li>
+                                <li onClick={()=>{navigate("/myorders")}}><img src={assetsf.bag_icon}  alt="" /><p>Order</p></li>
                                 <br/>
                                 <li onClick={logout}><img src={assetsf.logout_icon} alt="" /><p>Logout</p></li>
                             </ul>

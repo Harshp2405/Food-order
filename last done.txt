@@ -1,11 +1,9 @@
+run  methods: 1)Frontend 2)admin 3)backend
 
-Frontend almost done
-Backend foldeStructure done
-Admin panel start 
-
-start at 8:24:10
+start at 9:15:30
 add to cart and remove done
-
+online and cash on delivery payment custom
+verify page
 
 at admin delete didntwork
 
