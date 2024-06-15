@@ -1,9 +1,5 @@
 run  methods: 1)Frontend 2)admin 3)backend
 
-start at 9:15:30
-add to cart and remove done
-online and cash on delivery payment custom
-verify page
 
 at admin delete didntwork
 
@@ -28,11 +24,6 @@ all cart(post):http://localhost:2024/api/cart/remove
 user name(post):http://localhost:2024/api/cart/username
 
 possible to write : welcome {username} on main page
-
-
-
-
-
 
 
 "userName":"Harsh",
