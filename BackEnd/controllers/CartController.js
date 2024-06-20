@@ -51,7 +51,6 @@ export const getname = async (req, res) => {
     try {
         let userdata = await userModel.findOne({ _id: req.body.userid })
         let userName = userdata.userName
-
         res.json(userName)
     }
     catch (e) {

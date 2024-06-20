@@ -77,7 +77,7 @@ export const signup  = async (req,res) => {
 }
 
 /**
- userName
+userName
 userMail
 userPassword
  */

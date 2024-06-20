@@ -39,6 +39,6 @@ export const deletefood = async (req , res)=>{
         res.json({sucess:true,message:"deleted"})
     } catch (error) {
         console.log(error)
-        res.json({sucess:false , message:"sucessful remove"})
+        res.json({sucess:false , message:"unsucessful to remove"})
     }
 }

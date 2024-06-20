@@ -23,7 +23,7 @@ remove cart(del):http://localhost:2024/api/cart/remove
 all cart(post):http://localhost:2024/api/cart/remove
 user name(post):http://localhost:2024/api/cart/username
 
-possible to write : welcome {username} on main page
+possible to write : welcome {username} on main page , list all the user to admin panel , edit fooddetails
 
 
 "userName":"Harsh",
