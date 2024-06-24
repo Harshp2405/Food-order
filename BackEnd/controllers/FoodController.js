@@ -3,6 +3,7 @@
 import fs from 'fs'
 import { Foodmodel } from '../Models/FoodModel.js'
 import { storage } from '../routes/FoodRoute.js';
+import { userModel } from '../Models/UserModel.js';
 // Add
 export const Add = async (req , res)=>{
     const food = new Foodmodel({
@@ -35,10 +36,29 @@ export const deletefood = async (req , res)=>{
     try {
         const del = await Foodmodel.findByIdAndDelete(req.body._id);
         // fs.unlink("uploads/"+food.image,()=>{})
-        await Foodmodel.findByIdAndDelete(req.body.id );
+        await Foodmodel.findByIdAndDelete(req.body._id );
         res.json({sucess:true,message:"deleted"})
     } catch (error) {
         console.log(error)
         res.json({sucess:false , message:"unsucessful to remove"})
+    }
+}
+
+export const UserList = async (req, res)=>{
+    try {
+        const user = await userModel.find({});
+        res.json({sucess:true,data:user})
+    } catch (e) {
+        console.log(e)
+        res.json({sucess:false,message:faild})
+    }
+}
+
+export const deluser = async (req , res)=>{
+    try {
+        const del = await userModel.findByIdAndDelete(req.body._id)
+        res.json({sucess:true,message:"sucess"})
+    } catch (error) {
+        res.json({sucess:false,message:error})
     }
 }

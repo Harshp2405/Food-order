@@ -19,11 +19,17 @@ Login user(post):http://localhost:2024/api/user/login
 
 
 add cart(post):http://localhost:2024/api/cart/add
-remove cart(del):http://localhost:2024/api/cart/remove
+remove cart(post):http://localhost:2024/api/cart/remove
 all cart(post):http://localhost:2024/api/cart/remove
 user name(post):http://localhost:2024/api/cart/username
 
+
+
+user del(post):http://localhost:2024/api/food/del
+
 possible to write : welcome {username} on main page , list all the user to admin panel , edit fooddetails
+
+change on  : list.jsx and foodcontroller.jsx
 
 
 "userName":"Harsh",

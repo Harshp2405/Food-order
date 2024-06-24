@@ -16,6 +16,9 @@ export const Sidebar = () => {
           <NavLink to='/order' className="sidebarop">
             <img src={assetsa.order_icon} alt="" /><p>Orders Item</p>
           </NavLink>
+          <NavLink to='/user' className="sidebarop">
+            <img src={assetsa.profile} alt="" /><p>User List</p>
+          </NavLink>
         </div>
       </div>
     </>

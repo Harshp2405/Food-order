@@ -15,18 +15,17 @@ export const List = () => {
       console.log(error)
     }
   }
-  const delfood = async (foodid) => {
-
+  const delfood = async (_id) => {
     try {
-      const response = await axios.post(`${url}/api/food/remove`,{id:foodid})
+      const response = await axios.post(`${url}/api/food/remove`,{ id:_id })
       await fetchlist();
       if (response.data.success) {
         console.log("data delete")
       }
       console.log(response)
-      console.log({id:foodid})
+      console.log({ id:_id })
     } catch (error) {
-      console.log( JSON.stringify(error))
+      console.log(JSON.stringify(error))
     }
 
   }
@@ -48,17 +47,17 @@ export const List = () => {
           </div>
         </div>
         {
-          list.map((item , index) => {
+          list.map((item, index) => {
             return (
-            <div className="itmtabfmt" key={index}>
-            <div className="imgfood">
-              <img src={`${url}/images/` + item.image} alt="" />
-            </div>
-              <p>{item.Foodname}</p>
-              <p>{item.category}</p>
-              <p>{item.price}/-</p>
-              <p onClick={()=>delfood(index)} className='del'>Delete</p>
-            </div>
+              <div className="itmtabfmt" key={index}>
+                <div className="imgfood">
+                  <img src={`${url}/images/` + item.image} alt="" />
+                </div>
+                <p>{item.Foodname}</p>
+                <p>{item.category}</p>
+                <p>{item.price}/-</p>
+                <p onClick={() => delfood(item._id)} className='del'>Delete</p>
+              </div>
             );
           })
         }

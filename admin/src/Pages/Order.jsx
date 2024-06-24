@@ -9,6 +9,7 @@ export const Order = () => {
     const res = await axios.post("http://localhost:2024/api/order/status",{
       orderid,status:e.target.value
     })
+    console.log(res)
 if(res.data.sucess){
   await fetchapi()
 }

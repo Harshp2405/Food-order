@@ -4,6 +4,7 @@ import { Sidebar } from "./Components/Sidebar";
 import { Add } from "./Pages/Add";
 import { List } from "./Pages/List";
 import { Order } from "./Pages/Order";
+import { User } from "./Pages/User";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/add" element={<Add/>}></Route>
           <Route path="/list" element={<List/>}></Route>
           <Route path="/order" element={<Order/>}></Route>
+          <Route path="/user" element={<User/>}></Route>
         </Routes>
       </div>
     </div>
