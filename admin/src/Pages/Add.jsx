@@ -44,13 +44,13 @@ export const Add = () => {
     else {
       console.log("Error")
       console.log(e)
-      // setdata({
-      //   Foodname: "",
-      //   Fooddescription: "",
-      //   price: "",
-      //   category: "Salad",
-      // })
-      // setimage(false)
+      setdata({
+        Foodname: "",
+        Fooddescription: "",
+        price: "",
+        category: "Salad",
+      })
+      setimage(false)
     }
   }
 
@@ -92,7 +92,7 @@ export const Add = () => {
               <input onChange={changeHandle} value={data.price} type="number" name='price' required placeholder='Price' />
             </div>
           </div>
-          <button type='submit' className='btn btn-outline-secondary my-3' >Submit</button>
+          <button type='submit' className='btn btn-outline-success my-3' >Submit</button>
         </form>
       </div>
     </>

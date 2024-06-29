@@ -4,7 +4,7 @@ import './Cart.css'
 import { Storecontext } from '../../Context/Storecontext'
 import { useNavigate } from 'react-router-dom'
 export const Cart = () => {
-  const {cartitem , food_list , removetocart , carttotal}=useContext(Storecontext)
+  const {cartitem , food_list , removetocart , carttotal , deletecart}=useContext(Storecontext)
   const navigate = useNavigate() 
   const imgurl ="http://localhost:2024/images/"
   return (
@@ -18,6 +18,7 @@ export const Cart = () => {
           <p>quantity</p>
           <p>total</p>
           <p>remove</p>
+          <p>Delete</p>
         </div>
         <br />
         <hr />
@@ -31,7 +32,8 @@ export const Cart = () => {
                   <p>{item.price}</p>
                   <p>{cartitem[item._id]}</p>
                   <p>{cartitem[item._id]*item.price}</p>
-                  <p onClick={()=>{removetocart(item._id)}} className='del'>Delete</p>
+                  <p onClick={()=>{removetocart(item._id)}} className='del'><i className='fas fa-circle-minus'></i></p>
+                  <p onClick={()=>{deletecart(item._id)}} className='del'><i className='fas fa-trash-can'></i> </p>
                 </div>
                 <hr />
                 </>
@@ -58,7 +60,8 @@ export const Cart = () => {
               <p>{carttotal()===0?0:carttotal()+100}</p>
             </div>
           </div>
-            <button className='btn bg-primary w-75 mx-5' onClick={()=>{navigate("/PlaceOrder")}} >Checkout</button>
+            <button className='btn bg-primary w-75 mx-auto' onClick={()=>{navigate("/PlaceOrder")}} >Checkout</button>
+            <button className='btn bg-danger w-75 mx-auto' onClick={()=>{navigate("/")}} >Menu</button>
         </div>
       </div>
     </div>

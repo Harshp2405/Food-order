@@ -15,19 +15,18 @@ export const List = () => {
       console.log(error)
     }
   }
-  const delfood = async (_id) => {
+  const delfood = async (id) => {
     try {
-      const response = await axios.post(`${url}/api/food/remove`,{ id:_id })
+      const response = await axios.post("http://localhost:2024/api/food/remove",{ _id:id })
       await fetchlist();
       if (response.data.success) {
         console.log("data delete")
       }
-      console.log(response)
-      console.log({ id:_id })
+      // console.log(response)
+      console.log({ _id:id })
     } catch (error) {
       console.log(JSON.stringify(error))
     }
-
   }
 
   useEffect(() => {

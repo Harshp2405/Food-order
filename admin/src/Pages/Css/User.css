@@ -3,10 +3,14 @@
 }
 .details , .listmap{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 0.8rem 1rem;
 }
 .deluser:hover{
     color: red;
     cursor: pointer;
+}
+.details{
+    background-color: darkcyan;
+    color: gainsboro;
 }

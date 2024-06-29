@@ -25,6 +25,11 @@ export const Storecontextprovider =(props)=>{
         setcartitem((prev)=>({...prev,[itemid]:prev[itemid]-1}))
         await axios.post("http://localhost:2024/api/cart/remove",{itemid},{headers:{token}})
     } 
+    const deletecart = async (itemid)=>{
+        // setcartitem((prev)=>({...prev,[itemid]:prev[itemid]-1}))
+        setcartitem((prev)=>({...prev,[itemid]:prev[itemid] = 0}))
+        await axios.post("http://localhost:2024/api/cart/delete",{itemid},{headers:{token}})
+    } 
 
     const cartdata = async(token)=>{
         const res = await axios.post("http://localhost:2024/api/cart/getcart",{},{headers:{token}})
@@ -72,7 +77,7 @@ export const Storecontextprovider =(props)=>{
         addtocart,
         removetocart,
         carttotal,
-        url,token,settoken,
+        url,token,settoken,deletecart
     }
     useEffect(() => {
         // console.log(cartitem)

@@ -33,7 +33,7 @@ export const User = () => {
   return (
     <>
         <div className="alluser">
-            <h2>All User</h2>
+            <h2>All User {user.length}</h2>
             <div className="data">
             <div className="details">
                 <b>USER NAME</b>
@@ -45,8 +45,8 @@ export const User = () => {
                     return(
                         <div className='listmap' key={index} >
                             <span>{item.userName}</span>
-                            <span>{item.userMail}</span>
-                            <span className='deluser' onClick={()=>{deleteuser(item._id)}} >Delete</span>
+                            <span> <i className='fas fa-envelope'></i> {item.userMail} </span>
+                            <span className='deluser' onClick={()=>{deleteuser(item._id)}} > Delete <i className='fas fa-trash-can'></i></span>
                         </div>
                     )
                 })

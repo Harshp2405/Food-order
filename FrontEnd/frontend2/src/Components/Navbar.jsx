@@ -43,7 +43,7 @@ export const Navbar = ({ setshowlogin }) => {
                             <li id='navli' onClick={() => { setMenu("AboutUs") }} className={[menu === "AboutUs" ? "active" : ""]}>AboutUs</li>
                         </ul>
                     </div>
-                    <div className="name"> Welcome {} fgcv </div>
+                    <div className="name"> Welcome {} </div>
                     <div className="buttons">
                         <div className="cart mx-5 mb-3">
                             <img className='butn' onClick={() => { navigate('/Cart') }} src={assetsf.basket_icon} alt="" />

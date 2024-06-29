@@ -35,6 +35,22 @@ export const removecart = async (req, res) => {
         console.log(e)
     }
 }
+export const deletecart = async (req, res) => {
+    try {
+        let userdata = await userModel.findOne({ _id: req.body.userid })
+        let userCart = await userdata.userCart
+
+        if (userCart[req.body.itemid] > 0) {
+            userCart[req.body.itemid] = 0
+        }
+        await userModel.findByIdAndUpdate(req.body.userid, { userCart })
+        res.json({ sucess: true, message: userCart + "remove" })
+    }
+    catch (e) {
+        res.json({ sucess: false, message: e })
+        console.log(e)
+    }
+}
 export const getcart = async (req, res) => {
     try {
         let userdata = await userModel.findOne({ _id: req.body.userid })

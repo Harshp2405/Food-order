@@ -11,7 +11,7 @@ export const Add = async (req , res)=>{
         Fooddescription:req.body.Fooddescription,
         price:req.body.price,
         category:req.body.category,
-        // image:req.file.filename,
+        image:req.file.filename,
     })
     try {
         await food.save();
@@ -35,8 +35,7 @@ export const Listfood = async (req, res)=>{
 export const deletefood = async (req , res)=>{
     try {
         const del = await Foodmodel.findByIdAndDelete(req.body._id);
-        // fs.unlink("uploads/"+food.image,()=>{})
-        await Foodmodel.findByIdAndDelete(req.body._id );
+        fs.unlink("uploads/"+food.image,()=>{})
         res.json({sucess:true,message:"deleted"})
     } catch (error) {
         console.log(error)
