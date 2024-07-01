@@ -12,10 +12,12 @@ export const Navbar = ({ setshowlogin }) => {
     const [username, setusername] = useState("")
     const { carttotal, token, settoken } = useContext(Storecontext)
 
-    const uname =async ()=>{
-        const res = await axios.post("http://localhost:2024/api/cart/getname", {}, { headers: {token}})
-            setusername(res.data)
-            console.log(username)
+    const uname = async () => {
+        const res = await axios.post("http://localhost:2024/api/cart/getname", {}, { headers: { token } })
+        setusername(res.data)
+        console.log(username)
+
+        return username;
     }
 
     useEffect(() => {
@@ -26,7 +28,7 @@ export const Navbar = ({ setshowlogin }) => {
         settoken("")
         navigate("/")
     }
-   
+
     return (
         <>
             <nav className="navbar bg-green-300">
@@ -43,7 +45,11 @@ export const Navbar = ({ setshowlogin }) => {
                             <li id='navli' onClick={() => { setMenu("AboutUs") }} className={[menu === "AboutUs" ? "active" : ""]}>AboutUs</li>
                         </ul>
                     </div>
-                    <div className="name"> Welcome {} </div>
+                    <div className="name"> Welcome {
+                        setInterval(() => {
+                            <p>{username}</p>
+                        }, 3000)
+                    } </div>
                     <div className="buttons">
                         <div className="cart mx-5 mb-3">
                             <img className='butn' onClick={() => { navigate('/Cart') }} src={assetsf.basket_icon} alt="" />
