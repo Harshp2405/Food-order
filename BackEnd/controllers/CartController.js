@@ -66,7 +66,7 @@ export const getcart = async (req, res) => {
 export const getname = async (req, res) => {
     try {
         let userdata = await userModel.findOne({ _id: req.body.userid })
-        let userName = userdata.userName
+        let userName = userdata
         res.json(userName)
     }
     catch (e) {

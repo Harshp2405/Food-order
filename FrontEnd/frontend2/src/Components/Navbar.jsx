@@ -14,15 +14,13 @@ export const Navbar = ({ setshowlogin }) => {
 
     const uname = async () => {
         const res = await axios.post("http://localhost:2024/api/cart/getname", {}, { headers: { token } })
-        setusername(res.data)
+        setusername(res.data.userName)
         console.log(username)
-
-        return username;
     }
 
     useEffect(() => {
         uname()
-    }, [username])
+    }, [username,uname])
     const logout = () => {
         localStorage.removeItem("token")
         settoken("")
@@ -45,11 +43,9 @@ export const Navbar = ({ setshowlogin }) => {
                             <li id='navli' onClick={() => { setMenu("AboutUs") }} className={[menu === "AboutUs" ? "active" : ""]}>AboutUs</li>
                         </ul>
                     </div>
-                    <div className="name"> Welcome {
-                        setInterval(() => {
-                            <p>{username}</p>
-                        }, 3000)
-                    } </div>
+                     {
+                       token!=null?<div>{username}</div>:<span>Login</span>
+                    }
                     <div className="buttons">
                         <div className="cart mx-5 mb-3">
                             <img className='butn' onClick={() => { navigate('/Cart') }} src={assetsf.basket_icon} alt="" />
