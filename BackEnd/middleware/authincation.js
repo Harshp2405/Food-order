@@ -13,7 +13,7 @@ export const authmid = async (req , res , next)=>{
             res.json({sucess:false , message:error})
         }
     }else{
-        return res.json({sucess:false,message:"login to add"})
+        return res.json({sucess:false,message:"login to add user"})
     }
     
 }

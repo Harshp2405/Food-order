@@ -9,7 +9,7 @@ Backend urls:-
 images (get): http://localhost:2024/images/{imagename}
 add food (post) : http://localhost:2024/api/food/add
 list food (get):http://localhost:2024/api/food/list
-delete food (delete):http://localhost:2024/api/food/remove
+delete food (post):http://localhost:2024/api/food/remove
 
 
 

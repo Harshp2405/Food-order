@@ -43,7 +43,7 @@ export const signup  = async (req,res) => {
         
         const alreadyUser = await userModel.findOne({userMail})
         if (alreadyUser) {
-            return res.json({sucess:false,message:"Already use this email"})
+            return res.json({sucess:false,message:"Already exist email please try new email"})
         }
 
         if (!validator.isEmail(userMail)) {
@@ -56,7 +56,6 @@ export const signup  = async (req,res) => {
 
         const crypting = await bcrypt.genSalt(14)
         const cryptpassword = await bcrypt.hash(userPassword,crypting)
-
         const createUser = new userModel({
             userName: userName,
             userMail:userMail,

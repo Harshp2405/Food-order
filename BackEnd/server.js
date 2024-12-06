@@ -1,12 +1,12 @@
+const { json } = pkg;
+import 'dotenv/config.js'
 import express from 'express'
 import bodyparser from 'body-parser'
 import pkg from 'body-parser';
-const { json } = pkg;
 import cors from 'cors'
 import {connectdb} from "./config/db.js"
 import {foodrouter} from "./routes/FoodRoute.js"
 import { userrouter } from './routes/UserRoutes.js';
-import 'dotenv/config.js'
 import { cartrouter } from './routes/CartRoute.js';
 import { Orderrouter } from './routes/OrderRoutes.js';
 
