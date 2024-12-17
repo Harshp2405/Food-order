@@ -8,7 +8,7 @@ export const Storecontextprovider =(props)=>{
     const [food_list , setfoodlist] = useState([])
     const url = "http://localhost:2024"
     const [token,settoken]=useState("")
-
+//Add to cart
     const addtocart = async (itemid)=>{
         if(!cartitem[itemid]){
             setcartitem((prev)=>({...prev,[itemid]:1}))
@@ -21,21 +21,26 @@ export const Storecontextprovider =(props)=>{
         }
     }
 
+    // remove from cart -1
     const removetocart =async (itemid)=>{
         setcartitem((prev)=>({...prev,[itemid]:prev[itemid]-1}))
         await axios.post("http://localhost:2024/api/cart/remove",{itemid},{headers:{token}})
     } 
+
+    // Delete from cart
     const deletecart = async (itemid)=>{
         // setcartitem((prev)=>({...prev,[itemid]:prev[itemid]-1}))
         setcartitem((prev)=>({...prev,[itemid]:prev[itemid] = 0}))
         await axios.post("http://localhost:2024/api/cart/delete",{itemid},{headers:{token}})
     } 
 
+    // Get Cart data
     const cartdata = async(token)=>{
         const res = await axios.post("http://localhost:2024/api/cart/getcart",{},{headers:{token}})
         setcartitem(res.data.userCart)
     }
 
+    // Cart Total 
     const carttotal = ()=>{
         try {
             let tamount = 0
@@ -61,6 +66,7 @@ export const Storecontextprovider =(props)=>{
         load();
     }, [])
     
+    // Fetch food from dB
     const fetchfood= async ()=>{
         const res = await axios.get("http://localhost:2024/api/food/list")
         setfoodlist(res.data.data)

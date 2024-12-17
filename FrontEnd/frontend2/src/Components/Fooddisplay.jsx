@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useContext } from 'react'
 import './Css/Fooddisplay.css'
 import { Storecontext } from '../Context/Storecontext'

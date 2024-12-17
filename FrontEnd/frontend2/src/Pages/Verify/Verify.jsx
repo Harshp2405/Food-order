@@ -20,7 +20,7 @@ const verifypayment = async () =>{
     alert("sucess /myorder")
   }
   else{
-    alert("error")
+    alert("error At Payment")
     console.log(res.data)
     // navigate("/")
   }
