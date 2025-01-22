@@ -29,7 +29,6 @@ export const Storecontextprovider =(props)=>{
 
     // Delete from cart
     const deletecart = async (itemid)=>{
-        // setcartitem((prev)=>({...prev,[itemid]:prev[itemid]-1}))
         setcartitem((prev)=>({...prev,[itemid]:prev[itemid] = 0}))
         await axios.post("http://localhost:2024/api/cart/delete",{itemid},{headers:{token}})
     } 
